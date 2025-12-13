@@ -9,18 +9,10 @@ services:
     ports:
       - "8222:8222"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
 # =================================================
 # Client Gateway
 # =================================================
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
   client-gateway:
     build: ./client-gateway
     ports:
@@ -32,18 +24,10 @@ services:
       - PORT=3000
       - NATS_SERVERS=nats://nats-server:4222
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
 # =================================================
 # Products Microservice
 # =================================================
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
   products-ms:
     build: ./products-ms
     volumes:
@@ -54,18 +38,10 @@ services:
       - NATS_SERVERS=nats://nats-server:4222
       - DATABASE_URL=file:./dev.db
     
-<<<<<<< HEAD
-      
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
 # =================================================
 # Orders Microservice
 # =================================================
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
   orders-ms:
     depends_on:
       - orders-db
@@ -78,18 +54,10 @@ services:
       - DATABASE_URL=postgresql://postgres:123456@orders-db:5432/ordersdb?schema=public
       - NATS_SERVERS=nats://nats-server:4222
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
 # =================================================
 # Orders Database
 # =================================================
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
   orders-db:
     container_name: orders_database
     image: postgres:16.2
@@ -105,10 +73,6 @@ services:
       - POSTGRES_PASSWORD=123456
       - POSTGRES_DB=ordersdb
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
 # =================================================
 # Payments Microservice
 # =================================================
@@ -127,8 +91,4 @@ services:
       - STRIPE_SECRET=${STRIPE_SECRET}
       - STRIPE_SUCCESS_URL=${STRIPE_SUCCESS_URL}
       - STRIPE_CANCEL_URL=${STRIPE_CANCEL_URL}
-<<<<<<< HEAD
       - STRIPE_ENDPOINT_SECRET=${STRIPE_ENDPOINT_SECRET}
-=======
-      - STRIPE_ENDPOINT_SECRET=${STRIPE_ENDPOINT_SECRET}
->>>>>>> e307ed7 (update environment configuration and add payments microservice to docker-compose)
